@@ -13,11 +13,9 @@ img.inline {
 	display: inline-block !important;
 	height: 16px;
 	vertical-align: middle;
-}
 
-a img.inline {
 	border: 1px solid gray !important;
-	margin: -1px;
+	margin: -7px -1px;
 	image-rendering: -webkit-optimize-contrast;
 }
 
@@ -47,10 +45,13 @@ body, h1, p {
 
 
 header {
-	/*background: url("textures/grass-top.png") repeat-x 0% -32px;*/
-	background: url("textures/snow-top.png") repeat-x 0% -32px;
+	background: url("textures/grass-top.png") repeat-x 0% -32px;
 	height: 128px;
 }
+body.christmas header {
+	background-image: url("textures/snow-top.png");
+}
+
 
 header h1 {
 	height: 32px;
@@ -67,9 +68,12 @@ header p {
 	font-family: Minecraft, sans-serif;
 	text-shadow: 1px 1px white;
 	text-align: right;
-	/*background: url("textures/grass-side.png") repeat-x 0% 32px;*/
-	background: url("textures/snow-side.png") repeat-x 0% 32px;
+	background: url("textures/grass-side.png") repeat-x 0% 32px;
 }
+body.christmas header p {
+	background-image: url("textures/snow-side.png");
+}
+
 
 footer {
 	background: url("textures/bedrock.png") repeat-x;
@@ -116,7 +120,7 @@ section:nth-child(odd) h1 {
 }
 
 section p {
-	padding: 8px 8px;
+	padding: 8px 0px;
 }
 
 section.warning {
@@ -151,6 +155,18 @@ section.warning h1 {
 	background: rgba(255,255,255,0.75);
 	min-height: 192px;
 	position: relative;
+	padding: 0px 8px;
+}
+.grid div.cell {
+	float: left;
+	width: 240px;
+}
+
+.grid .short {
+	min-height: 48px;
+}
+.grid .medium {
+	min-height: 120px;
 }
 
 .grid  div.across {
@@ -208,25 +224,27 @@ ul.copyright li {
 	right: 0px;
 }
 
-.donate button{
+button{
 	font: inherit;
 	border: 0px;
 	background: #808080;
 	background: rgba(0,0,0,0.5);
 	color: white;
 	width: 100%;
-	height: 32px;
 	cursor: pointer;
 }
-.donate button:hover{
+button:hover{
 	background: #c0c0c0;
 	background: rgba(0,0,0,0.25);
 }
-.donate button:active{
+button:active{
 	background: #404040;
 	background: rgba(0,0,0,0.75);
 }
 
+.donate button {
+	height: 32px;
+}
 .comments {
 	background: rgba(192,192,192,0.75);
 	padding: 24px;
@@ -234,6 +252,26 @@ ul.copyright li {
 .comments  h1{
 	color: rgba(192,192,192,0.75);
 }
+
+input {
+	padding: 0px;
+	margin: 0px;
+	height: 24px;
+	line-height: 24px;
+	border: 0;
+	background: white;
+	display: inline-block;
+	vertical-align: top;
+}
+
+input[type=text] {
+	width: 128px;
+	font-family: Minecraft;
+	font-size: 16px;
+	float: right;
+	text-align: center;
+}
+
 
 /*
 .comments h3 {
@@ -309,7 +347,7 @@ ul.copyright li {
 	100% { background-position: 256.0px 1024.0px; }
 }
 
-#snow span{
+body.christmas #snow span{
 	background: url(snow.png);
 	position: fixed;
 	top: 0;
@@ -322,7 +360,7 @@ ul.copyright li {
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
 }
-#snow span.small{
+body.christmas #snow span.small{
     -webkit-animation-duration: 40s;
     background-size: 128px;
 }

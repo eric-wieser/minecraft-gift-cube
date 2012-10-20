@@ -24,9 +24,9 @@
 	);
 	
 	$code = @$_GET['code'] or $code = 'c0d3-g0e5-h3r3';//'code-goes-here';
-	$line1 = @$_GET['line1'] or $line1 = 'Merry';
-	$line2 = @$_GET['line2'] or $line2 = 'Christmas!';
-	$themeName = @$_GET['theme'] or $themeName = 'snow';
+	$line1 = @$_GET['line1'] or $line1 = 'Happy';
+	$line2 = @$_GET['line2'] or $line2 = 'Birthday!';
+	$themeName = @$_GET['theme'] or $themeName = 'grass';
 	$theme = $themes[$themeName];
 
 	$clean = @$_GET['clean'] or $clean = false
